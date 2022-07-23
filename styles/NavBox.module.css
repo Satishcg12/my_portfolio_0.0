@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+.main {
+  height: 100vh;
+  width: 50vw;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h1 {
+  font-family: 'Nova Square', cursive;
+  font-size: 3em;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 3rem auto;
+
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation:
+    typing 5s steps(13) infinite alternate,
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0
+  }
+
+  5% {
+    width: 0
+  }
+
+  50% {
+    width: 100%
+  }
+
+  100% {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: gray;
+  }
+}
+
+.nav ul {
+  list-style:none;
+}
+
+.nav ul li::before {
+  content: '➡ ';
+}
+  .nav ul li {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.nav ul li a {
+  position: relative;
+}
+
+.nav ul li a::after {
+  content: '';
+  background-color: white;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transition: width 250ms ease-in-out;
+  position: absolute;
+}
+.nav ul li a:hover::after{
+  width: 100%;
+}
