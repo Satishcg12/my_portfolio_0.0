@@ -2,4 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* .text{
+  animation: ease-in-out ;
+color: rgb(224, 224, 224);
+} */

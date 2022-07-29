@@ -7,15 +7,25 @@ module.exports = {
   theme: {
     extend: {
       animation:{
-      "image-appear":"appear 3s linear"
+      "image-appear":"appear 1s forwards",
+      "md-image-appear":"appear-md 1s forwards"
       },
       keyframes:{
         appear:{
           "0%":{
-            transform: 'rotateY(360deg)'
+            transform: 'rotateX(180deg) translateY(-100%)'
           },
           '100%':{
-            transform: 'rotateY(0deg)'
+            transform: 'rotateX(0deg)  translateY(-50%)'
+
+          }
+        },
+        'appear-md':{
+          "0%":{
+            transform: 'rotateY(180deg) translateX(-100%)'
+          },
+          '100%':{
+            transform: 'rotateY(0deg) translateX(-50%)'
 
           }
         }

@@ -6,9 +6,9 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
   return (
       <div>
-        <div className=' md:flex w-screen h-screen overflow-hidden'>
+        <div className='flex flex-col md:flex-row w-screen h-screen overflow-hidden'>
         <NavBar/>
-        <div className='overflow-scroll'>
+        <div className='overflow-auto w-full'>
 
           <Component {...pageProps} />
         </div>

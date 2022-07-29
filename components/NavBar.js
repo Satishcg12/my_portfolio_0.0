@@ -40,9 +40,8 @@ const NavBar = () => {
         <>
         <Head>
             <title>{title}</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
         </Head>
-            <div className='sticky bg-black w-full md:w-20 md:h-screen  flex flex-col md:flex-none items-center'>
+            <div className='sticky bg-black w-full md:w-20 md:h-screen p-4 flex flex-col md:flex-none items-center'>
                 <div className=' rounded text-white flex items-center py-4'>
                     <div className='h-7 w-7 relative ' >
                         <Image layout='fill' src={Logo} alt='logo' />
