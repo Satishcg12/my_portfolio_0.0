@@ -34,11 +34,11 @@ const NavBar = () => {
             default:
                 break;
         }
-    }, [route])
+    }, [route.asPath])
 
     return (
         <>
-            <div className=' bg-black fixed w-full md:w-1/12 md:h-screen p-4 flex flex-col md:flex-none items-center'>
+            <div className='sticky bg-black w-full md:w-20 md:h-screen p-4 flex flex-col md:flex-none items-center'>
                 <div className=' rounded text-white flex items-center py-4'>
                     <div className='h-7 w-7 relative ' >
                         <Image layout='fill' src={Logo} alt='logo' />
@@ -48,57 +48,57 @@ const NavBar = () => {
                     </span>
                 </div>
                 <div className=' flex md:flex-col justify-evenly text-white w-screen md:w-auto md:h-full'>
-                    <span className={hoverNav} title='Home'>
                         <Link href='/'>
                             <a >
+                    <span className={hoverNav} title='Home'>
 
                                 <i className="fa-solid fa-house text-white"></i>
+                    </span>
                             </a>
                         </Link>
-                    </span>
-                    <span className={hoverNav} title='About'>
                         <Link href='/about'>
                             <a>
+                    <span className={hoverNav} title='About'>
                                 <i className="fa-solid fa-user text-white"></i>
+                    </span>
 
                             </a>
                         </Link>
-                    </span>
-                    <span className={hoverNav} title='Projects'>
                         <Link href='/projects'>
                             <a>
+                    <span className={hoverNav} title='Projects'>
 
                                 <i className="fa-solid fa-code"></i>
+                    </span>
                             </a>
                         </Link>
 
-                    </span>
-                    <span className={hoverNav} title='Achivements'>
                         <Link href='/achivements'>
                             <a>
+                    <span className={hoverNav} title='Achivements'>
 
                                 <i className="fa-solid fa-map"></i>
+                    </span>
                             </a>
                         </Link>
 
-                    </span>
-                    <span className={hoverNav} title='Education'>
                         <Link href='/education'>
                             <a>
+                    <span className={hoverNav} title='Education'>
 
                                 <i className="fa-solid fa-graduation-cap"></i>
+                    </span>
                             </a>
                         </Link>
 
-                    </span>
-                    <span className={hoverNav} title='Contact me'>
                         <Link href='/contact'>
                             <a>
+                    <span className={hoverNav} title='Contact me'>
                                 <i className="fa-solid fa-envelope"></i>
+                    </span>
 
                             </a>
                         </Link>
-                    </span>
                 </div>
             </div>
         </>
