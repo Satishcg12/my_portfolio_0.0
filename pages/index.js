@@ -10,7 +10,7 @@ export default function Home() {
     </Head>
     <div className="h-[400px] w-[300px] relative">
 
-      <Image layout="fill" src='/ME.jpeg' alt="image"/>
+      <Image layout="fill" src='/ME.jpeg' alt="image"/> 
     </div>
     </>
   )
