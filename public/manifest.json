@@ -44,10 +44,10 @@
       }
     ],
     "start_url": "/?source=pwa",
-    "background_color": "#00d5ff",
+    "background_color": "#fff",
     "display": "standalone",
     "orientation":"portrait",
     "scope": "/",
-    "theme_color": "#00d5ff"
+    "theme_color": "#000"
 
   }
