@@ -22,9 +22,10 @@ export default function Home() {
             Resume
           </button>
           <button className="border-black border px-7 py-2">
-            Hier me
+            Hire me
           </button>
           </div>
+          
         </div>
       </div>
     </>
