@@ -1,4 +1,5 @@
 {
+    "id":"/",
     "short_name": "SATISH",
     "name": "SATISH portfolio",
     "description": "my personal portfolio",
@@ -43,11 +44,11 @@
         "purpose": "maskable"
       }
     ],
-    "start_url": "/?source=pwa",
+    "start_url": "/",
     "background_color": "#000",
     "display": "standalone",
     "orientation":"portrait",
     "scope": "/",
-    "theme_color": "#fff"
+    "theme_color": "#000"
 
   }
