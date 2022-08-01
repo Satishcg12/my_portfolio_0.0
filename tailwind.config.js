@@ -11,6 +11,7 @@ module.exports = {
         "image-appear": "appear 1s forwards",
         "md-image-appear": "appear-md 1s forwards",
         "spining-ba": "spin 2s infinite alternate",
+        bar: "bar .7s linear",
       },
       keyframes: {
         appear: {
@@ -39,6 +40,14 @@ module.exports = {
           '50%': {
             transform: 'rotate(180deg) scale(.8) ',
             transformOrigin: 'center center'
+          }
+        },
+        'bar': {
+          "0%": {
+            width: '0%',
+          },
+          '100%': {
+            width: '100%',
           }
         }
       }

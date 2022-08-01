@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import myImage from '../public/images/ME.jpeg'
 

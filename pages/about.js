@@ -15,8 +15,6 @@ export default function About() {
                     I have built personal websites, ecommerce websites, and Wordpress websites.
                     I have used React, Next.js, TailwindCSS and MongoDB to build my websites.
                     My current goal is to become a full stack developer.
-
-
                 </p>
             </div>
         </div>
