@@ -1,8 +1,27 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
-export default function Projects({ data }) {
-    // console.log(data)
+const token = process.env.GITHUB_TOKEN
+export default function Projects() {
+    const [ data, setData ]= useState()
+    useEffect( () => {
+        const fetchData = async () => {
+        await fetch(`https://api.github.com/user/repos`, {
+            headers: {
+                Accept: 'application/vnd.github.v3+json',
+                Authorization: `token ${token}`,
+                'Content-Type': 'application/json',
+            }
+        }).then(res => res.json())
+        .then(res => {
+            setData(res)
+        }
+        ).catch(err => console.log(err))
+    }
+    fetchData()
+    }, [])
+    console.log(data)
     return (
         <>
             <h1 className="text-4xl font-semibold text-center my-10">My Projects</h1>
@@ -44,16 +63,8 @@ export default function Projects({ data }) {
     )
 }
 
-export async function getServerSideProps() {
-    // Fetch data from external API
-    const res = await fetch(`https://api.github.com/user/repos`, {
-        headers: {
-            Accept: 'application/vnd.github.v3+json',
-            Authorization: `token ${process.env.GITHUB_TOKEN}`,
-            'Content-Type': 'application/json',
-        }
-    })
-    const data = await res.json()
+// export async function getServerSideProps() {
+//     // Fetch data from external API
 
-    return { props: { data } }
-}
+//     return { props: { data } }
+// }

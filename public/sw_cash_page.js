@@ -2,12 +2,18 @@ const cashName = 'sw_cash';
 
 const cashAssets = [
     '/',
+    '/about',
+    '/contact',
+    '/education',
+    '/achivements',
+    '/projects',
+    
+
 ]
 
 //call install event
 self.addEventListener('install', event => {
-    console.log('Service Worker: Installed');
-    event.waitUntil(
+        event.waitUntil(
         caches.open(cashName).then(function(cache) {
             console.log('Service Worker: Caching Files');
             return cache.addAll(cashAssets);
@@ -17,7 +23,6 @@ self.addEventListener('install', event => {
 });
 //call activate event
 self.addEventListener('activate', event => {
-    console.log('Service Worker: Activated');
     //remove old cache
     event.waitUntil(
         caches.keys().then(cacheNames => {
@@ -33,23 +38,12 @@ self.addEventListener('activate', event => {
 
 //call fetch event
 self.addEventListener('fetch', event => {
-    console.log('Service Worker: Fetching');
     event.respondWith(
-        caches.match(event.request).then((response) => {
-            if (response) {
-                console.log('Service Worker: Found In Cache');
-                return response;
-            }
-            console.log('Service Worker: Fetching Requested File');
-            return fetch(event.request).then((response) => {
-                return caches.open(cashName).then((cache) => {
-                    console.log('Service Worker: Caching File');
-                    cache.put(event.request, response.clone());
-                    return response;
-                });
-            });
+        caches.match(event.request).then(response => {
+            return response || fetch(event.request);
         }
         )
     );
 }
 );
+
