@@ -2,13 +2,13 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function Projects({ data }) {
+    // console.log(data)
     return (
         <>
             <h1 className="text-4xl font-semibold text-center my-10">My Projects</h1>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mx-10">
 
-                {
-                    data.map((item, index) => {
+                {data.map((item, index) => {
                         return (
                             <div key={index} className="border p-10 rounded shadow-lg relative" >
                                 <h3 className="font-bold">
@@ -48,9 +48,9 @@ export async function getServerSideProps() {
     // Fetch data from external API
     const res = await fetch(`https://api.github.com/user/repos`, {
         headers: {
-            "Authorization": `token ${process.env.GITHUB_TOKEN}`,
+            Accept: 'application/vnd.github.v3+json',
+            Authorization: `token ${process.env.GITHUB_TOKEN}`,
             'Content-Type': 'application/json',
-            'Accept': 'application/vnd.github.v3+json'
         }
     })
     const data = await res.json()
