@@ -17,7 +17,7 @@ const ProgressBar = () => {
         }
     }, [router])
     return isLoading &&(
-    <div className="text-8xl absolute bg-gray-500 h-1 shadow-lg inset-0 z-50 animate-bar"></div>
+    <div className="text-8xl absolute bg-gray-500 h-3 shadow-lg inset-0 z-50 animate-bar"></div>
   )
 }
 

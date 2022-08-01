@@ -1,32 +1,17 @@
+import axios from "axios"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
 const token = process.env.GITHUB_TOKEN
-export default function Projects() {
-    const [ data, setData ]= useState([])
-    useEffect( () => {
-        const fetchData = async () => {
-        await fetch(`https://api.github.com/user/repos`, {
-            headers: {
-                Accept: 'application/vnd.github.v3+json',
-                Authorization: `token ${token}`,
-                'Content-Type': 'application/json',
-            }
-        }).then(res => res.json())
-        .then(res => {
-            setData(res)
-        }
-        ).catch(err => console.log(err))
-    }
-    fetchData()
-    }, [])
+export default function Projects({ data }) {
+    
     return (
         <>
             <h1 className="text-4xl font-semibold text-center my-10">My Projects</h1>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mx-10">
 
-                {data.map((item, index) => {
+                {data && data.map((item, index) => {
                         return (
                             <div key={index} className="border p-10 rounded shadow-lg relative" >
                                 <h3 className="font-bold">
@@ -62,8 +47,15 @@ export default function Projects() {
     )
 }
 
-// export async function getServerSideProps() {
-//     // Fetch data from external API
+export async function getServerSideProps() {
+    // Fetch data from external API
 
-//     return { props: { data } }
-// }
+    const res = await axios.get(`https://api.github.com/user/repos`,{
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+    const data = res.data
+
+    return { props: { data } }
+}
