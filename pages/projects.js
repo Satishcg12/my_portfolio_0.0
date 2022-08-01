@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 
 const token = process.env.GITHUB_TOKEN
 export default function Projects() {
-    const [ data, setData ]= useState()
+    const [ data, setData ]= useState({})
     useEffect( () => {
         const fetchData = async () => {
         await fetch(`https://api.github.com/user/repos`, {
