@@ -11,7 +11,7 @@ export default function Projects({ data }) {
             <h1 className="text-4xl font-semibold text-center my-10">My Projects</h1>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mx-10">
 
-                {data && data.map((item, index) => {
+                {data?.map((item, index) => {
                         return (
                             <div key={index} className="border p-10 rounded shadow-lg relative" >
                                 <h3 className="font-bold">

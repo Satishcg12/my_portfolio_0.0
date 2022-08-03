@@ -55,7 +55,7 @@ const NavItem = (props) => {
     
     return (
         <>
-            <Link href={href} passHref>
+            <Link href={href} passHref shallow={true}>
                 <a >
                     <span className={`hover:border border-white rounded-full h-8 w-8 flex justify-center items-center ${isActive?"border":""}`} title={name}>
 
@@ -75,7 +75,7 @@ const NavBar = () => {
             <div className='sticky bg-black w-full md:w-20 md:h-screen p-4 flex flex-col md:flex-none items-center'>
                 <div className=' rounded text-white flex items-center py-4'>
                     <div className='h-7 w-7 relative ' >
-                        <Image layout='fill' src={Logo} alt='logo' property='ture' />
+                        <Image layout='fill' src={Logo} alt='logo' property />
                     </div>
                     <span className='px-2 md:hidden'>
                         {/* {title} */}
