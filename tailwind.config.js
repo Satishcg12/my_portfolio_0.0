@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'image': 'image 1s linear ',
-        'md-image': 'md-image 1s linear ',
+        'image': 'image .7s forwards ',
+        'md-image': 'md-image .7s forwards ',
         "spining-b-a": "spin 2s infinite alternate",
         "content-appear-l-r": "content-appear-l-r 1s forwards",
         "content-appear-r-l": "content-appear-r-l 1s forwards",
