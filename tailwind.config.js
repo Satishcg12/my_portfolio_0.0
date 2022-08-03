@@ -7,29 +7,34 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-
-        "image-appear": "appear 1s forwards",
-        "md-image-appear": "appear-md 1s forwards",
-        "spining-ba": "spin 2s infinite alternate",
-        bar: "bar .7s linear",
+        'image': 'image 1s linear ',
+        'md-image': 'md-image 1s linear ',
+        "spining-b-a": "spin 2s infinite alternate",
+        "content-appear-l-r": "content-appear-l-r 1s forwards",
+        "content-appear-r-l": "content-appear-r-l 1s forwards",
+        "content-appear-b-t": "content-appear-b-t 1s forwards",
+        "content-appear-t-b": "content-appear-t-b 1s forwards",
+        about: "about .7s ease-in-out forwards",
       },
       keyframes: {
-        appear: {
+        'image': {
           "0%": {
-            transform: 'rotateX(180deg) translateY(-100%)'
+            opacity: 0,
+            transform: 'translateY(0)',
           },
           '100%': {
-            transform: 'rotateX(0deg)  translateY(-50%)'
-
+            opacity: 1,
+            transform: 'translateY(-50%)',
           }
         },
-        'appear-md': {
+        'md-image': {
           "0%": {
-            transform: 'rotateY(180deg) translateX(-100%)'
+            opacity: 0,
+            transform: 'translateX(0)',
           },
           '100%': {
-            transform: 'rotateY(0deg) translateX(-50%)'
-
+            opacity: 1,
+            transform: 'translateX(-50%)',
           }
         },
         'spin': {
@@ -42,14 +47,55 @@ module.exports = {
             transformOrigin: 'center center'
           }
         },
-        'bar': {
+        'content-appear-r-l': {
           "0%": {
-            width: '0%',
+            opacity: 0,
+            transform: 'translateX(50%)',
           },
           '100%': {
-            width: '100%',
+            opacity: 1,
+            transform: 'translateX(0%)',
           }
-        }
+        },
+
+        'content-appear-l-r': {
+          "0%": {
+            opacity: 0,
+            transform: 'translateX(-50%)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateX(0%)',
+          }
+        },
+        'about': {
+          "0%": {
+            transform: 'scale(0)',
+          },
+          '100%': {
+            transform: 'scale(1)',
+          }
+        },
+        'content-appear-b-t': {
+          "0%": {
+            opacity: 0,
+            transform: 'translateY(50%)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0%)',
+          }
+        },
+        'content-appear-t-b': {
+          "0%": {
+            opacity: 0,
+            transform: 'translateY(-50%)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0%)',
+          }
+        },
       }
     },
   },

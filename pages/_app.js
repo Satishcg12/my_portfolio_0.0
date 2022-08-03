@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Script from 'next/script'
 import NextNProgress from 'nextjs-progressbar'
 import NavBar from '../components/NavBar'
 import '../styles/globals.css'
@@ -12,7 +11,7 @@ function MyApp({ Component, pageProps }) {
         <title>My Personal Website</title>
         </Head>
         <NextNProgress
-          color='#00bcd4'
+          color='#395B64'
           startPosition={0.3}
           stopDelayMs={200}
           height={3}
@@ -25,8 +24,6 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </div>
         </div>
-
-        <Script src='/sw.js' />
       </div>
   )
 }

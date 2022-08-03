@@ -75,7 +75,7 @@ const NavBar = () => {
             <div className='sticky bg-black w-full md:w-20 md:h-screen p-4 flex flex-col md:flex-none items-center'>
                 <div className=' rounded text-white flex items-center py-4'>
                     <div className='h-7 w-7 relative ' >
-                        <Image layout='fill' src={Logo} alt='logo' property />
+                        <Image layout='fill' src={Logo} alt='logo' priority='true'/>
                     </div>
                     <span className='px-2 md:hidden'>
                         {/* {title} */}
