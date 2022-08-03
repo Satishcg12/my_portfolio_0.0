@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <div className="flex flex-col md:flex-row items-center">
         <div className="w-screen bg-black h-[250px] md:w-1/3 md:h-screen"></div>
-        <span className="h-[400px] w-[300px] relative  animate-image md:animate-md-image shadow-[-30px_-33px_rgba(234,234,234)] -translate-x-1/2" >
+        <span className="h-[400px] w-[300px] relative  animate-image md:animate-md-image shadow-[-30px_-33px_rgba(234,234,234)]" >
           <Image layout="fill" src={myImage} alt="image"  placeholder="blur"/>
         </span>
         <div className="-translate-y-full md:translate-y-0 border-t-2 md:border-t-0 md:border-l-2 border-black pt-4 md:pl-4 font-semibold gap-2 animate-content-appear-b-t md:animate-content-appear-l-r">
