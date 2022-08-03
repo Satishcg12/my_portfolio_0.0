@@ -1,11 +1,9 @@
 import axios from "axios"
-import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 
 const token = process.env.GITHUB_TOKEN
 export default function Projects({ data }) {
-
+    const gitUrl = 'https://github.com/Satishcg12'
     return (
         <>
             <h1 className="text-4xl font-semibold text-center my-10 animate-content-appear-t-b">My Projects</h1>
@@ -33,16 +31,30 @@ export default function Projects({ data }) {
                             <p className="font-extralight py-4 capitalize">
                                 {item.description || "No description"}
                             </p>
-                            <Link href={item.html_url}>
-                                <a rel='noopener noreferrer' target='_blank' className="absolute flex justify-center items-center top-4 right-4 border rounded-full shadow h-8 w-8 bg-gray-800 text-white">
-                                    <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </Link>
+                            {item.visibility === "public" ?
+                                <Link href={item.html_url}>
+                                    <a rel='noopener noreferrer' target='_blank' className={`absolute flex justify-center items-center top-4 right-4 border rounded-full shadow h-8 w-8 bg-gray-800 text-white`}>
+                                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </Link>
+                                :
+                                <span className="absolute flex justify-center items-center top-4 right-4 border rounded-full shadow h-8 w-8 bg-red-600 text-white">
+                                    <i className="fa-solid fa-lock"></i>
+                                </span>
+                            }
                         </div>
                     )
                 })
                 }
             </div>
+                <footer>
+                        <Link href={gitUrl} >
+                        <a rel='noopener noreferrer' target='_blank' className="text-gray-600 absolute flex items-center bottom-6 right-6 font-bold opacity-50">
+                        <h4>Powered by </h4>
+                            <i className="fa-brands fa-github"></i>
+                        </a>
+                        </Link>
+                </footer>
         </>
     )
 }

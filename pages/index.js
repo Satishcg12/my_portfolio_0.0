@@ -1,8 +1,17 @@
+import axios from "axios";
 import Image from "next/image";
+import { useEffect } from "react";
 import myImage from '../public/images/ME.jpeg'
 
 export default function Home() {
   
+useEffect(() => {
+  axios.get("/api/hello").then(res => {
+    console.log(res.data);
+  });
+}
+, []);
+
   return (
     <>
       <div className="flex flex-col md:flex-row items-center">
