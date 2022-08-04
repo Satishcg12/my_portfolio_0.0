@@ -17,7 +17,7 @@ const sendEmail = async (req, res) => {
         const mailOptions = {
             from: 'contact@contact.com',
             to: `${MY_EMAIL}`,
-            subject: 'Sending Email using Node.js',
+            subject: `New message from ${name} - ${email}`,
             text: `${name} ${email} ${message}`,
             html: `<h1>${name}</h1><p>${email}</p><p>${message}</p>`
         };
