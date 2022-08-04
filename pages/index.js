@@ -4,13 +4,7 @@ import { useEffect } from "react";
 import myImage from '../public/images/ME.jpeg'
 
 export default function Home() {
-  
-useEffect(() => {
-  axios.get("/api/hello").then(res => {
-    console.log(res.data);
-  });
-}
-, []);
+
 
   return (
     <>
