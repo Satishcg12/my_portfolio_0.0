@@ -17,16 +17,14 @@ const sendEmail = async (req, res) => {
         const mailOptions = {
             from: 'contact@contact.com',
             to: `${MY_EMAIL}`,
-            subject: `New message from ${name} - ${email}`,
+            subject: `New message in portfolio from ${name} - ${email}`,
             text: `${name} ${email} ${message}`,
-            html: `<h1>${name}</h1><p>${email}</p><p>${message}</p>`
+            html: `<h1>Name: ${name}</h1><p>Email: ${email}</p><p>Message: ${message}</p>`
         };
         await transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-                console.log(error);
                 return res.status(500).send({ message: error});
             } else {
-                console.log('Email sent: ' + info.response);
                 return res.status(200).send({ message: 'Email sent: ' + info.response});
             }
         })

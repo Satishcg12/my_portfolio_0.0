@@ -10,11 +10,7 @@ export default function About() {
             <div className={`animate-about text-center border-2 border-dashed border-gray-400 relative p-10 md:p-24  ${after} ${before} `}>
                 <h1 className="text-3xl font-bold">About</h1>
                 <p className="tracking-wide">
-                    I&lsquo;m a web developer with a passion for building beautiful, responsive websites. 
-                    I have a background in business and a passion for learning new technologies.
-                    I have built personal websites, ecommerce websites, and Wordpress websites.
-                    I have used React, Next.js, TailwindCSS and MongoDB to build my websites.
-                    My current goal is to become a full stack developer.
+                I&apos;m a web developer who is passionate about creating stunning, user-friendly websites. I love learning new technology and have a background in business. I have created e-commerce websites, Wordpress websites, and personal websites. To create my websites, I utilized React, Next.js, TailwindCSS, and MongoDB. My present objective is to evolve into a full stack developer.
                 </p>
             </div>
         </div>

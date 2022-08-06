@@ -65,7 +65,7 @@ export default function Contact() {
                     </div>
                     <div className="py-2">
                         <label htmlFor="email">Email address</label>
-                        <input autoComplete="off" type="email" className="border-b border-gray-500 outline-none w-full bg-transparent" id="email" name="email" required value={data.email} onChange={handleChange} />
+                        <input type="email" className="border-b border-gray-500 outline-none w-full bg-transparent" id="email" name="email" required value={data.email} onChange={handleChange} />
                     </div>
                     <div className="py-2">
                         <label htmlFor="message">Message <span className="text-sm font-extralight right-0">{data.message.length}/500</span></label>
@@ -73,8 +73,7 @@ export default function Contact() {
                     </div>
                     <button type="submit" className="border relative rounded shadow-lg w-full p-1 bg-black text-white">
                         Submit
-                        <span className={`absolute right-0 bottom-0 h-full`}>
-
+                        <span className={`absolute right-0 h-auto w-7 mx-auto `}>
 
                             {loading ? <i className="fas fa-spinner fa-spin ml-2"></i> : null}
                             {success ? <i className="fas fa-check ml-2 text-green-500 "></i> : null}

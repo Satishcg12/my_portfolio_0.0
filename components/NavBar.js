@@ -77,9 +77,6 @@ const NavBar = () => {
                     <div className='h-7 w-7 relative ' >
                         <Image layout='fill' src={Logo} alt='logo' priority='true'/>
                     </div>
-                    <span className='px-2 md:hidden'>
-                        {/* {title} */}
-                    </span>
                 </div>
                 <div className=' flex md:flex-col justify-evenly text-white w-screen h-auto md:w-auto md:h-full'>
                     {
