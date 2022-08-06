@@ -73,12 +73,12 @@ export default function Contact() {
                     </div>
                     <button type="submit" className="border relative rounded shadow-lg w-full p-1 bg-black text-white">
                         Submit
-                        <span className={`absolute right-0 bottom-0 h-full  p-1 ${success && 'bg-green-500'} ${error && 'bg-red-500'}`}>
+                        <span className={`absolute right-0 bottom-0 h-full`}>
 
 
                             {loading ? <i className="fas fa-spinner fa-spin ml-2"></i> : null}
-                            {success ? <i className="fas fa-check ml-2"></i> : null}
-                            {error ? <i className="fas fa-times ml-2"></i> : null}
+                            {success ? <i className="fas fa-check ml-2 text-green-500 "></i> : null}
+                            {error ? <i className="fas fa-times ml-2 text-red-500"></i> : null}
                         </span>
                     </button>
                 </form>
