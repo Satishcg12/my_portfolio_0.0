@@ -3,7 +3,6 @@ import Link from "next/link"
 
 const token = process.env.GITHUB_TOKEN
 export default function Projects({ data }) {
-    console.log(data)
     return (
         <>
         
@@ -34,7 +33,7 @@ export default function Projects({ data }) {
                                 {item.description?.slice(0,50) || "No description"}
                             </p>
                             {item.visibility === "public" ?
-                                <Link href={item.html_url}>
+                                <Link href={item.html_url} passHref>
                                     <a rel='noopener noreferrer' target='_blank' className={`absolute flex justify-center items-center top-4 right-4 border rounded-full shadow h-8 w-8 bg-gray-800 text-white hover:bg-gray-700`}>
                                         <i className="fa-solid fa-link "></i>
                                     </a>
@@ -43,6 +42,19 @@ export default function Projects({ data }) {
                                 <span className="absolute flex justify-center items-center top-4 right-4 border rounded-full shadow h-8 w-8 bg-red-600 text-white">
                                     <i className="fa-solid fa-link-slash"></i>
                                 </span>
+                            }
+                            {
+                                item?.homepage !== '' ?
+                                    <Link href={`${item.homepage.slice(0,5)!=='https'?'https://':'' }${item.homepage}`}>
+                                        <a  target='_blank' rel="noreferrer" className={`bg-gray-800 text-white px-2 p-1 rounded-full shadow-lg`}>
+                                            demo
+                                        </a>
+                                    </Link>
+                                    :
+                                    <span className="line-through bg-gray-800 text-white px-2 p-1 rounded-full shadow-lg cursor-not-allowed">
+                                        demo
+                                    </span>
+
                             }
                         </div>
                     )
