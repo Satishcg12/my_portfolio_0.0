@@ -43,9 +43,13 @@ export default function Projects({ data }) {
                                     <i className="fa-solid fa-link-slash"></i>
                                 </span>
                             }
+                                {
+                                    console.log(item.html_url)
+                                }
+                                {console.log(item.homepage)}
                             {
-                                item?.homepage !== '' ?
-                                    <Link href={`${item.homepage.slice(0,5)!=='https'?'https://':'' }${item.homepage}`}>
+                                item?.homepage !== '' && item?.homepage !== null && item?.homepage !== undefined ?
+                                    <Link href={`${item.homepage?.slice(0,5)!=='https'?'https://':'' }${item.homepage}`}>
                                         <a  target='_blank' rel="noreferrer" className={`bg-gray-800 text-white px-2 p-1 rounded-full shadow-lg`}>
                                             demo
                                         </a>
